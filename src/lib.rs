@@ -7,8 +7,6 @@ use url::Url;
 
 pub const CLOSEST_DISPENSER_QUERY: &str = "x-closest-dispenser";
 
-pub const SHOWCASE_MIME_TYPE: &str = "application/vnd.fiberplane.providers.catnip.closest";
-
 static COMMIT_HASH: &str = env!("VERGEN_GIT_SHA");
 static BUILD_TIMESTAMP: &str = env!("VERGEN_BUILD_TIMESTAMP");
 
