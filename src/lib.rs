@@ -74,27 +74,32 @@ async fn closest_dispenser_query_handler(
     .await?;
     let cells = match response {
         None => {
-            vec![Cell::Text(TextCell::builder()
-                .id("result".to_owned())
-                .content("No dispenser was found!".to_string())
-                .formatting(Formatting::default())
-            .build())]
+            vec![Cell::Text(
+                TextCell::builder()
+                    .id("result".to_owned())
+                    .content("No dispenser was found!".to_string())
+                    .formatting(Formatting::default())
+                    .build(),
+            )]
         }
         Some((distance, dispenser)) => {
-            vec![Cell::Text(TextCell::builder()
-                .id("result".to_owned())
-                .content(format!("The closest dispenser to you ({}, {}) is\n{} ({})\n\t{} {}\n\t{} {}",
-                    query_data.latitude,
-                    query_data.longitude,
-                    dispenser.name,
-                    distance,
-                    dispenser.address.street,
-                    dispenser.address.suite,
-                    dispenser.address.city,
-                    dispenser.address.zipcode
-                ))
-                .formatting(Formatting::default())
-            .build())]
+            vec![Cell::Text(
+                TextCell::builder()
+                    .id("result".to_owned())
+                    .content(format!(
+                        "The closest dispenser to you ({}, {}) is\n{} ({})\n\t{} {}\n\t{} {}",
+                        query_data.latitude,
+                        query_data.longitude,
+                        dispenser.name,
+                        distance,
+                        dispenser.address.street,
+                        dispenser.address.suite,
+                        dispenser.address.city,
+                        dispenser.address.zipcode
+                    ))
+                    .formatting(Formatting::default())
+                    .build(),
+            )]
         }
     };
 
@@ -106,8 +111,8 @@ fn check_status() -> Result<Blob> {
         .status(Ok(()))
         .version(COMMIT_HASH.to_owned())
         .built_at(BUILD_TIMESTAMP.to_owned())
-    .build()
-    .to_blob()
+        .build()
+        .to_blob()
 }
 
 async fn fetch_users(config: &CatnipConfig) -> Result<Vec<User>> {
@@ -123,7 +128,7 @@ async fn fetch_users(config: &CatnipConfig) -> Result<Vec<User>> {
         .headers(None)
         .method(HttpRequestMethod::Get)
         .body(None)
-    .build();
+        .build();
     let response = make_http_request(request).await?;
 
     serde_json::from_slice(&response.body).map_err(|e| Error::Deserialization {
