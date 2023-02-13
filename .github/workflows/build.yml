@@ -1,25 +1,45 @@
-name: Build and Test
+name: Build
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches: ["*"]
 
 env:
   CARGO_TERM_COLOR: always
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v2
-    - uses: dtolnay/rust-toolchain@stable
-      with:
-        targets: wasm32-unknown-unknown
-    - name: Build
-      run: cargo build --verbose
-    - name: Run tests
-      run: cargo test --verbose --target=x86_64-unknown-linux-gnu
+      - uses: actions/checkout@v2
+
+      - id: branch
+        name: Export branch
+        run: echo "::set-output name=branch::${GITHUB_HEAD_REF:-${GITHUB_REF##refs/heads/}}"
+
+      - name: Cache Rust dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            target
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: ${{ runner.os }}-cargo-
+
+      - name: Install latest stable
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+          targets: wasm32-unknown-unknown, x86_64-unknown-linux-gnu
+          components: rustfmt, clippy
+
+      - name: Check format
+        run: cargo fmt -- --check
+
+      - name: Lint code
+        uses: actions-rs/clippy-check@v1
+
+      - name: Run tests
+        run: cargo test --verbose --target=x86_64-unknown-linux-gnu
