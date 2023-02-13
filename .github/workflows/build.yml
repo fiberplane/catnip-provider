@@ -40,6 +40,8 @@ jobs:
 
       - name: Lint code
         uses: actions-rs/clippy-check@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Run tests
         run: cargo test --verbose --target=x86_64-unknown-linux-gnu
