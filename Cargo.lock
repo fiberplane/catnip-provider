@@ -51,7 +51,8 @@ checksum = "9e1b586273c5702936fe7b7d6896644d8be71e6314cfe09d3167c95f712589e8"
 [[package]]
 name = "base64uuid"
 version = "1.0.0"
-source = "git+ssh://git@github.com/fiberplane/fiberplane.git?branch=main#ea2d969cc5f0de1d886c9df55b20c1f8638f27f7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f9e3d2060139fc5977f18e2514ddd54aa594ee087f2fc8486a73f897423fd41b"
 dependencies = [
  "base64",
  "serde",
@@ -153,9 +154,9 @@ dependencies = [
 
 [[package]]
 name = "cxx"
-version = "1.0.89"
+version = "1.0.90"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bc831ee6a32dd495436e317595e639a587aa9907bef96fe6e6abc290ab6204e9"
+checksum = "90d59d9acd2a682b4e40605a242f6670eaa58c5957471cbf85e8aa6a0b97a5e8"
 dependencies = [
  "cc",
  "cxxbridge-flags",
@@ -165,9 +166,9 @@ dependencies = [
 
 [[package]]
 name = "cxx-build"
-version = "1.0.89"
+version = "1.0.90"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "94331d54f1b1a8895cd81049f7eaaaef9d05a7dcb4d1fd08bf3ff0806246789d"
+checksum = "ebfa40bda659dd5c864e65f4c9a2b0aff19bea56b017b9b77c73d3766a453a38"
 dependencies = [
  "cc",
  "codespan-reporting",
@@ -180,15 +181,15 @@ dependencies = [
 
 [[package]]
 name = "cxxbridge-flags"
-version = "1.0.89"
+version = "1.0.90"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "48dcd35ba14ca9b40d6e4b4b39961f23d835dbb8eed74565ded361d93e1feb8a"
+checksum = "457ce6757c5c70dc6ecdbda6925b958aae7f959bda7d8fb9bde889e34a09dc03"
 
 [[package]]
 name = "cxxbridge-macro"
-version = "1.0.89"
+version = "1.0.90"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "81bbeb29798b407ccd82a3324ade1a7286e0d29851475990b612670f6f5124d2"
+checksum = "ebf883b7aacd7b2aeb2a7b338648ee19f57c140d4ee8e52c68979c6b2f7f2263"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -203,9 +204,9 @@ checksum = "56254986775e3233ffa9c4d7d3faaf6d36a2c09d30b20687e9f88bc8bafc16c8"
 
 [[package]]
 name = "enum-iterator"
-version = "1.2.0"
+version = "1.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "91a4ec26efacf4aeff80887a175a419493cb6f8b5480d26387eb0bd038976187"
+checksum = "9ea166b3f7dc1032f7866d13f8d8e02c8d87507b61750176b86554964dc6a7bf"
 dependencies = [
  "enum-iterator-derive",
 ]
@@ -224,7 +225,8 @@ dependencies = [
 [[package]]
 name = "fiberplane-models"
 version = "1.0.0-alpha.3"
-source = "git+ssh://git@github.com/fiberplane/fiberplane.git?branch=main#ea2d969cc5f0de1d886c9df55b20c1f8638f27f7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2435d8ba48dc8135191a072e254584b2cc35cbf8b758240e7e766404ca225461"
 dependencies = [
  "base64",
  "base64uuid",
@@ -245,6 +247,8 @@ dependencies = [
 [[package]]
 name = "fiberplane-pdk"
 version = "1.0.0-alpha.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "62e9080fa4edd479221379adde67f6063e2b741e6f37d4967e67a67213d1acec"
 dependencies = [
  "fiberplane-models",
  "fiberplane-pdk-macros",
@@ -261,6 +265,8 @@ dependencies = [
 [[package]]
 name = "fiberplane-pdk-macros"
 version = "1.0.0-alpha.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1896927520e0a40d5be3dba5b89b1e60a9bf7fe09b1eb2f144511285ec0b0166"
 dependencies = [
  "Inflector",
  "fiberplane-models",
@@ -273,7 +279,8 @@ dependencies = [
 [[package]]
 name = "fiberplane-provider-bindings"
 version = "2.0.0-alpha.1"
-source = "git+ssh://git@github.com/fiberplane/fiberplane.git?branch=main#ea2d969cc5f0de1d886c9df55b20c1f8638f27f7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7bd9698f1722d879d216330eb04cf5abc810437c3cc18cdb919ebb47cf8c9b75"
 dependencies = [
  "bytes",
  "fiberplane-models",
