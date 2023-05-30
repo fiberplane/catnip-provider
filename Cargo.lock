@@ -50,8 +50,9 @@ checksum = "9e1b586273c5702936fe7b7d6896644d8be71e6314cfe09d3167c95f712589e8"
 
 [[package]]
 name = "base64uuid"
-version = "1.0.0-alpha.2"
-source = "git+ssh://git@github.com/fiberplane/fiberplane-rs.git?branch=main#fdfb019d7d96440a5f08f4f3bc4f2cb2c27e51ca"
+version = "1.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f9e3d2060139fc5977f18e2514ddd54aa594ee087f2fc8486a73f897423fd41b"
 dependencies = [
  "base64",
  "serde",
@@ -90,6 +91,7 @@ dependencies = [
 name = "catnip-provider"
 version = "1.0.0"
 dependencies = [
+ "fiberplane-models",
  "fiberplane-pdk",
  "serde",
  "serde-aux",
@@ -223,8 +225,9 @@ dependencies = [
 
 [[package]]
 name = "fiberplane-models"
-version = "1.0.0-alpha.2"
-source = "git+ssh://git@github.com/fiberplane/fiberplane-rs.git?branch=main#fdfb019d7d96440a5f08f4f3bc4f2cb2c27e51ca"
+version = "1.0.0-beta.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "681b60729c95b24bb10f2b689b1794537760872c35bd569cbe429ad73e8f4e90"
 dependencies = [
  "base64",
  "base64uuid",
@@ -244,7 +247,9 @@ dependencies = [
 
 [[package]]
 name = "fiberplane-pdk"
-version = "1.0.0-alpha.3"
+version = "1.0.0-beta.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a93d881e40979960e897e74a564d828ca824ce62db9087d09858aceba0e22f0c"
 dependencies = [
  "fiberplane-models",
  "fiberplane-pdk-macros",
@@ -260,7 +265,9 @@ dependencies = [
 
 [[package]]
 name = "fiberplane-pdk-macros"
-version = "1.0.0-alpha.3"
+version = "1.0.0-beta.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d75dcb997960561606951be1b97a28cea20550610178236638ce56467e391cd4"
 dependencies = [
  "Inflector",
  "fiberplane-models",
@@ -272,8 +279,9 @@ dependencies = [
 
 [[package]]
 name = "fiberplane-provider-bindings"
-version = "2.0.0-alpha.1"
-source = "git+ssh://git@github.com/fiberplane/fiberplane-rs.git?branch=main#fdfb019d7d96440a5f08f4f3bc4f2cb2c27e51ca"
+version = "2.0.0-beta.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fa52df4dc94847446275d1a5d0358df462b09dba546e0585342401673303f2cb"
 dependencies = [
  "bytes",
  "fiberplane-models",
@@ -303,9 +311,9 @@ dependencies = [
 
 [[package]]
 name = "fp-bindgen"
-version = "3.0.0-alpha.1"
+version = "3.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "68001df5b79fae975469931d0d003d23da9122902c7abee675958edac2926133"
+checksum = "b744e2a1f5bfd3e75983abddb8cfe59179a573be3f672b2755f0a25aec8660d7"
 dependencies = [
  "Inflector",
  "bytes",
@@ -323,9 +331,9 @@ dependencies = [
 
 [[package]]
 name = "fp-bindgen-macros"
-version = "3.0.0-alpha.1"
+version = "3.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0f82c18058cae910e8ed8295193165a3cff05611101e7983458f1c27ad585742"
+checksum = "42a0086f6f4c63aca5b1b9447ee0470141d8ed1ce268430328395324e552363c"
 dependencies = [
  "proc-macro-error",
  "proc-macro2",
@@ -335,9 +343,9 @@ dependencies = [
 
 [[package]]
 name = "fp-bindgen-support"
-version = "3.0.0-alpha.1"
+version = "3.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4eeb4e810c1608a653380d5c875114fa1e00f4c05b2907677d2d1f5016861282"
+checksum = "d0215a44a7cd16a69a5b7e93802a8ccd83e7f6d84cd464fbdabb604770daf087"
 dependencies = [
  "fp-bindgen-macros",
  "once_cell",
